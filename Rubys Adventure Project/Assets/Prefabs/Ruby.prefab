@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -1941604110748723697}
   m_Layer: 8
   m_Name: Ruby
-  m_TagString: Untagged
+  m_TagString: RubyController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,6 +107,8 @@ MonoBehaviour:
   timeInvincible: 2
   throwSound: {fileID: 8300000, guid: b2edfd40873655249ba0e01a5cf705be, type: 3}
   hitSound: {fileID: 8300000, guid: 9b1bb1f450b7d444fa4a8019d13519a7, type: 3}
+  hitPlayerPrefab: {fileID: 1844396745655968013, guid: a422a3c3ed285c746b4e91dae8a444d1, type: 3}
+  healthPlayerPrefab: {fileID: 2701009297134726217, guid: 93201e8c386bac34583fbbb3202dd9fd, type: 3}
 --- !u!50 &1615511022395019886
 Rigidbody2D:
   serializedVersion: 4
@@ -212,7 +214,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.645
   m_Pitch: 1
   Loop: 0
   Mute: 0

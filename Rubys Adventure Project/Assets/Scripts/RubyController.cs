@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RubyController : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class RubyController : MonoBehaviour
     
     public int health { get { return currentHealth; }}
     int currentHealth;
+
+    public int score { get { return currentScore; }} //not actually sure if this part is needed but i assumed -Alfred
+    int currentScore;
     
     public float timeInvincible = 2.0f;
     bool isInvincible;
@@ -29,7 +33,9 @@ public class RubyController : MonoBehaviour
     public AudioClip throwSound;
     public AudioClip hitSound;
 
-    // Start is called before the first frame update
+    public ParticleSystem hitPlayerPrefab;
+    public ParticleSystem healthPlayerPrefab;
+
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
@@ -37,9 +43,10 @@ public class RubyController : MonoBehaviour
         animator = GetComponent<Animator>();
 
         audioSource= GetComponent<AudioSource>();
+
+        scoreText.text = "Robots Fixed: " + currentScore; //this is to try and display on the UI text the score
     }
 
-    // Update is called once per frame
     void Update()
     {
         horizontal = Input.GetAxis("Horizontal");
@@ -102,12 +109,25 @@ public class RubyController : MonoBehaviour
             
             isInvincible = true;
             invincibleTimer = timeInvincible;
-
+            ParticleSystem particleSystem = Instantiate(hitPlayerPrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
             PlaySound(hitSound);
         }
         
+        if (amount > 0)
+        {
+            ParticleSystem particleSystem = Instantiate(healthPlayerPrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
+        }
+
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
+    }
+
+    public void ChangeScore(int scoreAmount) //i'm pretty sure this is all correct? -Alfred
+    {
+        if (scoreAmount > 0)
+        {
+            currentScore = (currentScore + scoreAmount);
+        }
     }
 
     void Launch()

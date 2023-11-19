@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+private RubyController rubyController; // this line of code creates a variable called "rubyController" to store information about the RubyController script!
+
 public class EnemyController : MonoBehaviour
 {
     public float speed;
@@ -87,4 +89,27 @@ public class EnemyController : MonoBehaviour
         smokeEffect.Stop();
     }
 
+    //everything below is for step 4
+
+    GameObject rubyControllerObject = GameObject.FindWithTag("RubyController"); //this line of code finds the RubyController script by looking for a "RubyController" tag on Ruby
+
+    if (rubyControllerObject != null)
+    {
+        rubyController = rubyControllerObject.GetComponent<RubyController>(); //and this line of code finds the rubyController and then stores it in a variable
+
+        print ("Found the RubyConroller Script!");
+    }
+
+    if (rubyController == null)
+    {
+        print ("Cannot find GameController Script!");
+    }
+
+    if (rubyController != null) //where does this go???
+    {
+        if (controller.score  < controller.maxHealth)
+        {
+            rubyController.ChangeScore(1);
+        }
+    }
 }
