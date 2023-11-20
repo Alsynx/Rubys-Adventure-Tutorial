@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
-private RubyController rubyController; // this line of code creates a variable called "rubyController" to store information about the RubyController script!
+//private RubyController rubyController; // this line of code creates a variable called "rubyController" to store information about the RubyController script!
 
 public class EnemyController : MonoBehaviour
 {
@@ -20,12 +22,16 @@ public class EnemyController : MonoBehaviour
 
     public ParticleSystem smokeEffect;
 
+    ScoreController controller;     //reference to Score Controller Script
+
     // Start is called before the first frame update
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         timer = changeTime;
         animator = GetComponent<Animator>();
+
+        controller = FindObjectOfType<ScoreController>();    //grabs score control script
     }
 
     void Update()
@@ -87,29 +93,6 @@ public class EnemyController : MonoBehaviour
         rigidbody2D.simulated = false;
         animator.SetTrigger("Fixed");
         smokeEffect.Stop();
-    }
-
-    //everything below is for step 4
-
-    GameObject rubyControllerObject = GameObject.FindWithTag("RubyController"); //this line of code finds the RubyController script by looking for a "RubyController" tag on Ruby
-
-    if (rubyControllerObject != null)
-    {
-        rubyController = rubyControllerObject.GetComponent<RubyController>(); //and this line of code finds the rubyController and then stores it in a variable
-
-        print ("Found the RubyConroller Script!");
-    }
-
-    if (rubyController == null)
-    {
-        print ("Cannot find GameController Script!");
-    }
-
-    if (rubyController != null) //where does this go???
-    {
-        if (controller.score  < controller.maxHealth)
-        {
-            rubyController.ChangeScore(1);
-        }
+        controller.IncreaseScore();  //increases score when this is called (a robot is fixed)
     }
 }

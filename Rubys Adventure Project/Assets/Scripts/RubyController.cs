@@ -15,7 +15,7 @@ public class RubyController : MonoBehaviour
     int currentHealth;
 
     public int score { get { return currentScore; }} //not actually sure if this part is needed but i assumed -Alfred
-    int currentScore;
+    int currentScore = 0;
     
     public float timeInvincible = 2.0f;
     bool isInvincible;
@@ -36,15 +36,17 @@ public class RubyController : MonoBehaviour
     public ParticleSystem hitPlayerPrefab;
     public ParticleSystem healthPlayerPrefab;
 
+
+
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
 
-        audioSource= GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
 
-        scoreText.text = "Robots Fixed: " + currentScore; //this is to try and display on the UI text the score
+        //scoreText.text = "Robots Fixed: " + currentScore; //this is to try and display on the UI text the score
     }
 
     void Update()

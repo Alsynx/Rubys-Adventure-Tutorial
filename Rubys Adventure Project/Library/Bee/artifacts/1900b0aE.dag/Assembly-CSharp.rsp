@@ -382,6 +382,7 @@
 "Assets/Scripts/NonPlayerCharacter.cs"
 "Assets/Scripts/Projectile.cs"
 "Assets/Scripts/RubyController.cs"
+"Assets/Scripts/ScoreController.cs"
 "Assets/Scripts/UIHealthBar.cs"
 -langversion:9.0
 
