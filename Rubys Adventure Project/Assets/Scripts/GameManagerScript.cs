@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 public class GameManagerScript : MonoBehaviour
 {
     public GameObject gameOverUI;
+
+    public GameObject winGameUI;
+
+    public GameObject bgMusic;
+    public GameObject winMusic;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +39,8 @@ public class GameManagerScript : MonoBehaviour
 
     public void winGame()
     {
-
+        winGameUI.SetActive(true);
+        winMusic.SetActive(true);
+        bgMusic.SetActive(false);
     }
 }

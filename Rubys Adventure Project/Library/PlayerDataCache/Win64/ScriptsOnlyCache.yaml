@@ -60,8 +60,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -151,51 +153,51 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1622}
     - Class: 114
-      Script: {instanceID: 1996}
+      Script: {instanceID: 2376}
     - Class: 114
-      Script: {instanceID: 2378}
+      Script: {instanceID: 2840}
     - Class: 114
-      Script: {instanceID: 2634}
+      Script: {instanceID: 2914}
     - Class: 114
-      Script: {instanceID: 2738}
+      Script: {instanceID: 3002}
     - Class: 114
-      Script: {instanceID: 2846}
+      Script: {instanceID: 3170}
     - Class: 114
-      Script: {instanceID: 2920}
+      Script: {instanceID: 4060}
     - Class: 114
-      Script: {instanceID: 3008}
+      Script: {instanceID: 4530}
     - Class: 114
-      Script: {instanceID: 3088}
+      Script: {instanceID: 4854}
     - Class: 114
-      Script: {instanceID: 3178}
+      Script: {instanceID: 5188}
     - Class: 114
-      Script: {instanceID: 4068}
+      Script: {instanceID: 6140}
     - Class: 114
-      Script: {instanceID: 4538}
+      Script: {instanceID: 6826}
     - Class: 114
-      Script: {instanceID: 4862}
+      Script: {instanceID: 6882}
     - Class: 114
-      Script: {instanceID: 5196}
+      Script: {instanceID: 7104}
     - Class: 114
-      Script: {instanceID: 5266}
+      Script: {instanceID: 7510}
     - Class: 114
-      Script: {instanceID: 5806}
+      Script: {instanceID: 8978}
     - Class: 114
-      Script: {instanceID: 6152}
+      Script: {instanceID: 9994}
     - Class: 114
-      Script: {instanceID: 6838}
+      Script: {instanceID: 9998}
     - Class: 114
-      Script: {instanceID: 6894}
+      Script: {instanceID: 10002}
     - Class: 114
-      Script: {instanceID: 7116}
+      Script: {instanceID: 10006}
     - Class: 114
-      Script: {instanceID: 7522}
+      Script: {instanceID: 10010}
     - Class: 114
-      Script: {instanceID: 7586}
+      Script: {instanceID: 10014}
     - Class: 114
-      Script: {instanceID: 8894}
+      Script: {instanceID: 10018}
     - Class: 114
-      Script: {instanceID: 8994}
+      Script: {instanceID: 10022}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -319,12 +321,6 @@ ScriptsOnlyBuild:
     className: CinemachineCameraOffset
   - hash:
       serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: DamageZone
-  - hash:
-      serializedVersion: 2
       Hash: 7076552313cc5405cce27134bb16ec41
     assemblyName: Cinemachine
     namespaceName: Cinemachine
@@ -397,22 +393,10 @@ ScriptsOnlyBuild:
     className: IKManager2D
   - hash:
       serializedVersion: 2
-      Hash: 1e0a67c23adbca0ffdd5aa9af3db760b
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: EnemyController
-  - hash:
-      serializedVersion: 2
       Hash: c11d4b3e51adcaec83d0a473fe83b496
     assemblyName: Unity.2D.Animation.Runtime
     namespaceName: UnityEngine.U2D.Animation
     className: SkeletonAsset
-  - hash:
-      serializedVersion: 2
-      Hash: 2c6a1a3a038bb83acd62e13148e66c4d
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Projectile
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -479,12 +463,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.Tilemap.Extras
     namespaceName: UnityEngine.Tilemaps
     className: RuleOverrideTile
-  - hash:
-      serializedVersion: 2
-      Hash: 518d8597a7028fb37d7268c8df8b490e
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: UIHealthBar
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -865,12 +843,6 @@ ScriptsOnlyBuild:
     className: AnimatedTile
   - hash:
       serializedVersion: 2
-      Hash: defb6bf3f1b14b87741ddbab4acc26c1
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: ScoreController
-  - hash:
-      serializedVersion: 2
       Hash: 0a31b59c7e9de30f8e19cc11f48ae4a9
     assemblyName: Cinemachine
     namespaceName: Cinemachine
@@ -935,12 +907,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnEndDragMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 7cc06cfa5eb3edea07292da63f08ea1d
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: HealthCollectible
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -1189,12 +1155,6 @@ ScriptsOnlyBuild:
     className: CinemachineImpulseSource
   - hash:
       serializedVersion: 2
-      Hash: 0821992913be0bac1b6165d3296a487d
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: GameManagerScript
-  - hash:
-      serializedVersion: 2
       Hash: a03cf6f60c605d858f83449f4b4fc400
     assemblyName: UnityEngine.TestRunner
     namespaceName: UnityEngine.TestTools
@@ -1411,12 +1371,6 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
-      Hash: be1a21ac4c95ce1f9e3225ae5f24de71
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: NonPlayerCharacter
-  - hash:
-      serializedVersion: 2
       Hash: 1acffdc47de1ca014dae3d384c3d1086
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -1559,8 +1513,56 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 2c6a1a3a038bb83acd62e13148e66c4d
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Projectile
+  - hash:
+      serializedVersion: 2
+      Hash: 19c11ba12fa325b7db286e97199e4910
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GameManagerScript
+  - hash:
+      serializedVersion: 2
+      Hash: be1a21ac4c95ce1f9e3225ae5f24de71
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: NonPlayerCharacter
+  - hash:
+      serializedVersion: 2
+      Hash: defb6bf3f1b14b87741ddbab4acc26c1
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ScoreController
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DamageZone
+  - hash:
+      serializedVersion: 2
+      Hash: 1e0a67c23adbca0ffdd5aa9af3db760b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: EnemyController
+  - hash:
+      serializedVersion: 2
+      Hash: 7cc06cfa5eb3edea07292da63f08ea1d
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: HealthCollectible
+  - hash:
+      serializedVersion: 2
+      Hash: 518d8597a7028fb37d7268c8df8b490e
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: UIHealthBar
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainScene.unity
-  playerPath: E:/Rubys-Adventure-Tutorial-main/Rubys Adventure Game/Rubys Adventure
+  playerPath: D:/UCF Unity Projects/Rubys Adventure/Rubys Adventure Game/Rubys Adventure
     Project.exe

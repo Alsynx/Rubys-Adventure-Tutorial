@@ -15,7 +15,7 @@ public class RubyController : MonoBehaviour
     int currentHealth;
 
     public int score { get { return currentScore; }} //not actually sure if this part is needed but i assumed -Alfred
-    int currentScore = 0;
+    int currentScore; //removed '= 0'
     
     public float timeInvincible = 2.0f;
     bool isInvincible;
@@ -100,7 +100,6 @@ public class RubyController : MonoBehaviour
             gameManager.gameOver();
             Debug.Log("Dead");
         }
-
     }
     
     void FixedUpdate()
