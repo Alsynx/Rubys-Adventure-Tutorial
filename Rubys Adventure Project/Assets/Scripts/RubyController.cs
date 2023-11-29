@@ -36,7 +36,9 @@ public class RubyController : MonoBehaviour
     public ParticleSystem hitPlayerPrefab;
     public ParticleSystem healthPlayerPrefab;
 
+    private bool isDead;
 
+    public GameManagerScript gameManager;
 
     void Start()
     {
@@ -80,16 +82,25 @@ public class RubyController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X))
         {
-        RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, lookDirection, 1.5f, LayerMask.GetMask("NPC"));
-        if (hit.collider != null)
+            RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, lookDirection, 1.5f, LayerMask.GetMask("NPC"));
+            if (hit.collider != null)
             {
                 NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
                 if (character != null)
                 {
                     character.DisplayDialog();
-                }  
+                }
             }
         }
+
+        if (health <= 0 && !isDead)
+        {
+            isDead = true;
+            gameObject.SetActive(false);
+            gameManager.gameOver();
+            Debug.Log("Dead");
+        }
+
     }
     
     void FixedUpdate()
