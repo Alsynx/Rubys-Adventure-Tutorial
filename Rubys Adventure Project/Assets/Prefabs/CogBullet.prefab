@@ -172,3 +172,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitSpark: {fileID: 9019616268255231386, guid: dbc4c5a60d528c642a9ab29d7e37b56f, type: 3}
+  hitSound: {fileID: 0}

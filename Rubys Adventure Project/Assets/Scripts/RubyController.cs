@@ -32,6 +32,7 @@ public class RubyController : MonoBehaviour
 
     public AudioClip throwSound;
     public AudioClip hitSound;
+    public AudioClip interactSound;
 
     public ParticleSystem hitPlayerPrefab;
     public ParticleSystem healthPlayerPrefab;
@@ -88,6 +89,7 @@ public class RubyController : MonoBehaviour
                 NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
                 if (character != null)
                 {
+                    PlaySound(interactSound); //Alfred's audio addition
                     character.DisplayDialog();
                 }
             }

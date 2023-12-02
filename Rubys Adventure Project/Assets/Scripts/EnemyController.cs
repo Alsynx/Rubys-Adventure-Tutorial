@@ -22,7 +22,7 @@ public class EnemyController : MonoBehaviour
 
     public ParticleSystem smokeEffect;
 
-    ScoreController controller;     //reference to Score Controller Script
+    ScoreController controller;
 
     // Start is called before the first frame update
     void Start()
